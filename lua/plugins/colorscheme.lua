@@ -1,28 +1,44 @@
 return {
-  {
-    "loctvl842/monokai-pro.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      local monokai = require("monokai-pro")
-      monokai.setup({
-        transparent_background = false,
-        filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
-        inc_search = "background", -- underline | background
-        background_clear = {},
-        plugins = {
-          bufferline = {
-            underline_selected = true,
-            underline_visible = false,
-            bold = false,
-          },
-          indent_blankline = {
-            context_highlight = "pro", -- default | pro
-            context_start_underline = true,
-          },
+    {
+        "catppuccin/nvim",
+        lazy = true,
+        name = "catppuccin",
+        opts = {
+            integrations = {
+                aerial = true,
+                alpha = true,
+                cmp = true,
+                dashboard = true,
+                flash = true,
+                gitsigns = true,
+                headlines = true,
+                illuminate = true,
+                indent_blankline = { enabled = true },
+                leap = true,
+                lsp_trouble = true,
+                mason = true,
+                markdown = true,
+                mini = true,
+                native_lsp = {
+                    enabled = true,
+                    underlines = {
+                        errors = { "undercurl" },
+                        hints = { "undercurl" },
+                        warnings = { "undercurl" },
+                        information = { "undercurl" },
+                    },
+                },
+                navic = { enabled = true, custom_bg = "lualine" },
+                neotest = true,
+                neotree = true,
+                noice = true,
+                notify = true,
+                semantic_tokens = true,
+                telescope = true,
+                treesitter = true,
+                treesitter_context = true,
+                which_key = true,
+            },
         },
-      })
-      monokai.load()
-    end,
-  },
+    },
 }
