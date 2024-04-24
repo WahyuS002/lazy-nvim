@@ -7,16 +7,9 @@ return {
             {
                 "<C-p>",
                 function()
-                    require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+                    require("telescope.builtin").find_files()
                 end,
                 desc = "Find files",
-            },
-            {
-                "C-S-p",
-                function()
-                    require("telescope.builtin").live_grep({ cwd = require("lazy.core.config").options.root })
-                end,
-                desc = "Live grep",
             },
         },
     },
